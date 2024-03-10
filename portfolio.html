@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5f56c5b3fa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Valorant Experience</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="WEBPROGPICS/game1.jpg">
+                <div class="layer">
+                    <h3>Rising Point</h3>
+                    <p>I started playing valorant in the year of 2020 and it was the year valorant was released. Despite of being a beginner, I already attained plenty achievements and victories in the game, example is having a 285 wins in a single season.</p>
+                    <a href="#"><i class="fa-solid fa-gamepad"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="WEBPROGPICS/game2.jpg">
+                <div class="layer">
+                    <h3>E-sports Experience</h3>
+                    <p>After a year of playing and grinding, I got recruited to a E-sports team which my friend introduced me. The team name is 'The Devonair'.This was the first time I joined a tournament and it was intense at the same time, it was fun because of the competitiveness.
+                        The following year, the team disbanded for several reasons, so I got to find myself another team, and it leads me to the team called 'Arkhon PH'. This team has many experience of being a team and joining tournamets, Arkhon was more advanced than my previous team, and it was hard in the first time but I manage to compliment my gameplay with them.
+                        but I have to leave my team after months being with them because I have to focus on my studies. But this year I joined another team called 'Sonny Angels'. I joined this team because it is full of my friends and also I already miss playing tournaments.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-wand-magic-sparkles"></i></i></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="WEBPROGPICS/game3.jpg">
+                <div class="layer">
+                    <h3>Piloting</h3>
+                    <p>I've successfully navigated numerous accounts from low ranks to impressive heights, leveraging strategic gameplay and dedication to achieve significant advancements in ranking. Through my extensive experience and in-depth knowledge of game mechanics, I specialize in guiding accounts to reach their maximum potential, ensuring each step of the journey is marked by skillful play and continuous improvement.</p>
+                    <a href="#"><i class="fa-solid fa-gun"></i></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#"class="btn">See more</a>
+    </div>
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+</div>
+<div class="copyright">
+    <p>Copyright © 2024 by Membee <i class="fa-solid fa-heart"></i>. All rights reserved.</p>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+
+<script>
+                 
+     var sidemenu = document.getElementById("sidemenu");
+
+     function openmenu(){
+        sidemenu.style.right = "0";
+     }
+     function closemenu(){
+        sidemenu.style.right = "-200px";
+     }
+
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwTZPi89Q6e2vP5RqeC7l3meqEWQ94d8XdA6eOp9cz2748ZcSv907FZd14gSV5mPrX4/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>

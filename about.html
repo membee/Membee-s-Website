@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5f56c5b3fa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="WEBPROGPICS/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hello! My name is Ernesto Jose Bawit Diaz but you can just call me EJ, you can also call me Membee as my nickname. I'm already 19 years old when I started doing this project.I'm also into fashion, and I love dressing nicely. Currently a college student and it's my second year of taking BSIT. 
+                        As a BSIT student, I'm fascinated by the way technology can bridge the gap between ideas and real-world applications. Building software or designing systems isn't just about code, it's about creating something that can solve problems or make people's live easier. 
+                        The challenge of taking a vague concept and turning it into a concrete solution is what truly excites me. Growing up, I couldn't get enough of sports, wheter it was dribbling a basketball, kicking high in taekwondo, practicing punches in Karate, or splashing around in swimming lessons, I loved being active at that time.
+                        Everyday felt like a new adventure, learning new skills and playing with different teams. But when I started playing video games, it literally made me love technologies even more. Gaming has been my passion since childhood, offering an immersive escape into fantastical worlds and thrilling challenges. The thrill of competition, the camaraderie of multiplayer adventures, 
+                        and the endless creativity of game design fuel my enduring love for gaming. From epic quests to strategic battles, gaming has woven itself into the fabric of my life, providing boundless excitement and endless enjoyment. And up until now, I still play video games and I'm so much into computer, it is one of the reasons i took this course. Right now, I'm planning to focus 
+                        on my specialization which is being a Data Analyst and hopefully be a successful person in the near future.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Advanced Gameplay</span><br>Reached High Rank</li>
+                            <li><span>Coaching</span><br>Detailed Step-by-step coaching</li>
+                            <li><span>Agent Flexible</span><br>Mastered every agent</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2020</span><br>Joined the E-sports team 'The Devonair'</li>
+                            <li><span>2022</span><br>Joined the E-sports team 'Arkhon PH'</li>
+                            <li><span>2024</span><br>Joined the E-sports team 'Sonny Angels'</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2009 - 2014</span><br>School Of Corpus Christi</li>
+                            <li><span>2014 - 2022</span><br>Lagro High School</li>
+                            <li><span>2022 - current</span><br>National University Fairview</li>
+                        </ul>
+                    </div>
+                    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024 by Membee <i class="fa-solid fa-heart"></i>. All rights reserved.</p>
+        </div>
+    </div>
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+    
+        function opentab(tabname){
+            for (tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    
+    </script>
+    
+    
+    <script>
+                     
+         var sidemenu = document.getElementById("sidemenu");
+    
+         function openmenu(){
+            sidemenu.style.right = "0";
+         }
+         function closemenu(){
+            sidemenu.style.right = "-200px";
+         }
+    
+    
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwTZPi89Q6e2vP5RqeC7l3meqEWQ94d8XdA6eOp9cz2748ZcSv907FZd14gSV5mPrX4/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

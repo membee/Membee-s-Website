@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5f56c5b3fa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-gun"></i>
+                <h2>Walkthrough Beginners</h2>
+                <p>I offer comprehensive tutorials tailored for Valorant beginners, ensuring thorough guidance and detailed insights to enhance your gameplay skills., I can help!</p>
+                <a href="contact.html">learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-headset"></i>
+                <h2>Coaching</h2>
+                <p>I provide personalized coaching sessions, offering expert guidance and strategic insights to help your team to elevate your overall performance and achieve your goals in your chosen field like tournaments.</p>
+                <a href="contact.html">learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-masks-theater"></i>
+                <h2>Pilot</h2>
+                <p>Expert account piloting services are available, guaranteeing a seamless and efficient experience for clients aiming to elevate their gaming progress and ranking in Valorant.</p>
+                <a href="contact.html">learn more</a>
+            </div>
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2024 by Membee <i class="fa-solid fa-heart"></i>. All rights reserved.</p>
+    </div>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+
+<script>
+                 
+     var sidemenu = document.getElementById("sidemenu");
+
+     function openmenu(){
+        sidemenu.style.right = "0";
+     }
+     function closemenu(){
+        sidemenu.style.right = "-200px";
+     }
+
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwTZPi89Q6e2vP5RqeC7l3meqEWQ94d8XdA6eOp9cz2748ZcSv907FZd14gSV5mPrX4/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
